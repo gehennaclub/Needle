@@ -23,13 +23,12 @@ namespace Needle
 
         public static string dbab(byte[] bytes)
         {
-            string buffer = "{ ";
+            string buffer = "";
 
             foreach (byte b in bytes)
             {
-                buffer += $"0x{b} ";
+                buffer += $"{b}";
             }
-            buffer += " }";
 
             return (buffer);
         }

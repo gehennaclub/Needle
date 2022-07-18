@@ -10,9 +10,9 @@ namespace Needle
     {
         public class Header
         {
-            public static Offset head = new Offset(Settings.entrypoint, 3);
+            public static Offset head = new Offset(Settings.entrypoint, 3, true);
             public static Offset version = new Offset(Header.head.next, 3);
-            public static Offset security = new Offset(Header.version.next, 1, true);
+            public static Offset security = new Offset(Header.version.next);
             public static Offset key = new Offset(Header.security.next, 256);
         }
 

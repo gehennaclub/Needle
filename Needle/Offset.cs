@@ -39,10 +39,10 @@ namespace Needle
                 aligner = 1;
             }
 
-            this.start = start + aligner;
+            this.start = start;
             this.size = size;
             this.end = (this.start + this.size - 1);
-            this.next = this.end + 1;
+            this.next = this.start + this.size + 1;
         }
     }
 }

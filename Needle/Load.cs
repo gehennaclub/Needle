@@ -24,7 +24,7 @@ namespace Needle
             {
                 head = bytes.Skip(Address.Header.head.start).Take(Address.Header.head.size).ToArray(),
                 version = bytes.Skip(Address.Header.version.start).Take(Address.Header.version.size).ToArray(),
-                security = (Format.Header.Security)bytes[Address.Header.security.size],
+                security = (Format.Header.Security)bytes[Address.Header.security.start],
                 key = bytes.Skip(Address.Header.key.start).Take(Address.Header.key.size).ToArray()
             };
 

@@ -14,7 +14,7 @@ namespace Needle
 
         public class Header
         {
-            public enum Security : byte
+            public enum Security
             {
                 none = 0x0,
                 hidden = 0x1,
