@@ -16,13 +16,12 @@ namespace Needle.Client
             key = new Structure.Key();
             state = new States(false);
 
-            load_header(bytes);
-            load_body(bytes);
 
-            //if (Validator.size(bytes, Structure.Settings.endpoint) == true)
-            //{
-            //    return;
-            //}
+            if (Validator.size(bytes, Structure.Settings.endpoint) == true)
+            {
+                load_header(bytes);
+                load_body(bytes);
+            }
         }
 
         private void load_header(byte[] bytes)
@@ -51,6 +50,7 @@ namespace Needle.Client
 
             body.authorization = new Structure.Key.Body.Authorization()
             {
+                client = bytes.Skip(Structure.Address.Body.Authorization.client.start).Take(Structure.Address.Body.Authorization.client.size).ToArray(),
                 versions = bytes.Skip(Structure.Address.Body.Authorization.versions.start).Take(Structure.Address.Body.Authorization.versions.size).ToArray()
             };
 

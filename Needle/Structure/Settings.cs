@@ -8,8 +8,8 @@ namespace Needle.Structure
 {
     public class Settings
     {
-        public static int entrypoint = 0x00;
-        public static int endpoint = 0x00;
+        public static int entrypoint = 0;
+        public static int endpoint = 647;
 
         public class Header
         {
